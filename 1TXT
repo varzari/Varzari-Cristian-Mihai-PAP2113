@@ -1,2 +1,84 @@
-cd calea_către_proiectul_tău
+<Window x:Class="WPFPlaceholderExample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Register Badge" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- General Information Section -->
+        <StackPanel Grid.Column="0" Margin="20">
+            <TextBlock FontSize="16" FontWeight="Bold" Text="General Information" />
+
+            <!-- First Name with Placeholder -->
+            <Grid Margin="0,10,0,0">
+                <TextBox Name="txtFirstName" Width="200" />
+                <TextBlock Text="First Name"
+                           IsHitTestVisible="False"
+                           Foreground="Gray"
+                           VerticalAlignment="Center"
+                           Margin="5,0,0,0">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                            <Style.Triggers>
+                                <!-- Show the placeholder text if the TextBox is empty -->
+                                <DataTrigger Binding="{Binding Text, ElementName=txtFirstName}" Value="">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </Grid>
+
+            <!-- Last Name with Placeholder -->
+            <Grid Margin="10,10,0,0">
+                <TextBox Name="txtLastName" Width="200" />
+                <TextBlock Text="Last Name"
+                           IsHitTestVisible="False"
+                           Foreground="Gray"
+                           VerticalAlignment="Center"
+                           Margin="5,0,0,0">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                            <Style.Triggers>
+                                <!-- Show the placeholder text if the TextBox is empty -->
+                                <DataTrigger Binding="{Binding Text, ElementName=txtLastName}" Value="">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>
+                </TextBlock>
+            </Grid>
+
+        </StackPanel>
+
+        <!-- Contact Details Section -->
+        <StackPanel Grid.Column="1" Background="#5A67D8" Margin="20" Padding="20">
+            <TextBlock FontSize="16" FontWeight="Bold" Foreground="White" Text="Contact Details" />
+            
+            <!-- Street and Nr with Placeholder -->
+            <Grid Margin="0,10,0,0">
+                <TextBox Name="txtStreet" Width="200" />
+                <TextBlock Text="Street + Nr"
+                           IsHitTestVisible="False"
+                           Foreground="Gray"
+                           VerticalAlignment="Center"
+                           Margin="5,0,0,0">
+                    <TextBlock.Style>
+                        <Style TargetType="TextBlock">
+                            <Setter Property="Visibility" Value="Collapsed"/>
+                            <Style.Triggers>
+                                <!-- Show the placeholder text if the TextBox is empty -->
+                                <DataTrigger Binding="{Binding Text, ElementName=txtStreet}" Value="">
+                                    <Setter Property="Visibility" Value="Visible"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </TextBlock.Style>cd calea_către_proiectul_tău
 
